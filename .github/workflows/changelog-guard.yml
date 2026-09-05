@@ -4,10 +4,10 @@ name: Changelog guard
 # Content edits to SKILL.md / pyproject.toml / uv.lock are fine.
 # Release PRs (label: release) are exempt. Engine changes need a changelog
 # fragment unless labeled skip-changelog.
-
+#
+# Automatic PR execution is disabled in this fork to prevent unsolicited runners.
 on:
-  pull_request:
-    types: [opened, synchronize, reopened, labeled, unlabeled]
+  workflow_dispatch:
 
 permissions: {}
 
