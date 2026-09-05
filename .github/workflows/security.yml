@@ -1,10 +1,8 @@
 name: Security
 
+# Automatic push/PR security scans are disabled in this fork. Run explicitly
+# when GitHub-hosted security checks are needed.
 on:
-  pull_request:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions: {}
