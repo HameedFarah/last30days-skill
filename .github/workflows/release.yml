@@ -1,11 +1,8 @@
 name: Release
 
+# Automatic tag-triggered releases are disabled in this fork. Releases remain
+# available explicitly from the Actions tab.
 on:
-  push:
-    tags:
-      - "v*"
-  # tag-release.yml dispatches this because GITHUB_TOKEN tag pushes do not
-  # start other workflows.
   workflow_dispatch:
     inputs:
       tag:
@@ -16,8 +13,7 @@ on:
 permissions: {}
 
 env:
-  # Tag push uses ref_name (vX.Y.Z); dispatch from tag-release passes inputs.tag.
-  RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+  RELEASE_TAG: ${{ inputs.tag }}
 
 jobs:
   # Build the existing .skill artifact (Claude Code / Codex / Cursor install
