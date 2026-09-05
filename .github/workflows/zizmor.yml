@@ -1,10 +1,8 @@
 name: GitHub Actions Security Analysis with zizmor 🌈
 
+# Automatic push/PR analysis is disabled in this fork. Run explicitly when needed.
 on:
-  push:
-    branches: ["main"]
-  pull_request:
-    branches: ["**"]
+  workflow_dispatch:
 
 permissions: {}
 
